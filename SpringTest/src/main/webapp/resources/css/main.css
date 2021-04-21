@@ -1,0 +1,35 @@
+/* main.css */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, div, span, p, input, textarea, ul, ol, li, a, table, th, td, h1, h2, h3, h4, h5, h6, pre, code {
+	font-family: 'NEXON Lv1 Gothic OTF';
+}
+            
+.container {
+	width: 800px;
+}
+
+.footer {
+	border-top: 1px solid #DDD;
+	margin-top: 50px;
+}
+
+.content {
+	min-height: 500px;
+}
+
+.table td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table th{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #EEE;
+}

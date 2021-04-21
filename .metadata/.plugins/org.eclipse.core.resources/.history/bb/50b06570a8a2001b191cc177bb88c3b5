@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 
+	MyBatis 특징
+	- SQL 을  *.java 에서 작성하지 않고 별도의 *.xml 에서 작성/관리한다.
+	- SQL을 관리하는 XML을 매퍼(Mapper) 라고 한다.
+	
+ -->
+
+
+<mapper namespace="test">
+
+	<!-- test.m1 -->
+	<insert id="m1">
+		insert into tblMyBatis (seq,name,age,etc) values (seqMyBatis.nextVal,'전우치',30,'테스트용')
+	</insert>
+	
+	<!-- test.m2 -->
+	<update id="m2" parameterType="java.lang.String"><!-- 그냥 String 즉 자료형을 적어놔야 한다. Integer 형이 넘어오면 Integer 을 적어줘야 한다. -=> java.lang 만 생략 가능 다른 패키지는 풀로 넣어야한다. -->
+		update tblMyBatis set age = age + 1 where seq = #{seq}
+	</update>
+	<!-- #표현은  매개변수 넘어온걸 받아준다.-->
+	
+	<!-- test.m3 -->
+	<insert id="m3" parameterType="java.util.HashMap">
+		insert into tblMyBatis (seq,name,age,etc) values (seqMyBatis.nextVal,#{name},#{age},#{etc})
+	</insert>
+	
+	<!-- test.m4 -->
+	<insert id="m4" parameterType="com.test.spring.MyBatisDTO">
+		insert into tblMyBatis (seq,name,age,etc) values (seqMyBatis.nextVal,#{name},#{age},#{etc})
+	</insert>
+	
+	<!-- test.m5 -->
+	<select id="m5" resultType="String">
+		select name from tblMyBatis where age = (select max(age) from tblMyBatis) and rownum = 1
+	</select>
+	
+	<!-- test.m6 -->
+	<select id="m6" parameterType="String" resultType="com.test.spring.MyBatisDTO">
+		select * from tblMyBatis where seq = #{seq}
+	</select>
+	
+	<!-- test.m7 -->
+	<select id="m7" resultType="String"> <!--  resultType : 반환값의 단일 레코드의 자료형 -->
+		select name from tblMyBatis
+	</select>
+	
+	<!-- test.m8 -->
+	<select id="m8" resultType="com.test.spring.MyBatisDTO">
+		select * from tblMyBatis
+	</select>
+	
+</mapper>

@@ -1,0 +1,11 @@
+package com.test.spring;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MyBatisDAO {
+	
+	@Autowired
+	private SqlSessionTemplate template;//myBatis -> Statement + resultSet역할 근데 또 애한테 의존하므로 의존주입 해야함
+	
+}

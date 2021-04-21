@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\½Å½ÂÈ¯\Desktop\java\QooSpring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+131096066.index
