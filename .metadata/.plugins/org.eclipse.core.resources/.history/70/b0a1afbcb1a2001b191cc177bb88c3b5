@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 
+	MyBatis 특징
+	- SQL 을  *.java 에서 작성하지 않고 별도의 *.xml 에서 작성/관리한다.
+	- SQL을 관리하는 XML을 매퍼(Mapper) 라고 한다.
+	
+ -->
+
+
+<mapper namespace="test">
+
+	<select id="m1" resultType="String">
+		select qoouser_email from dbo.QOO10_USER_REAL with(nolock) where qoouser_id = 'nyigd609658'
+	</select>
+	
+	
+</mapper>

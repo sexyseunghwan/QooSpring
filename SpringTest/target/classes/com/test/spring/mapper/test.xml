@@ -14,9 +14,9 @@
 
 <mapper namespace="test">
 
-	<select id="m1" resultType="String">
+<!-- 	<select id="m1" resultType="String">
 		select qoouser_email from dbo.QOO10_USER_REAL with(nolock) where qoouser_id = 'nyigd609658'
-	</select>
+	</select> -->
 	
 	
 </mapper>
