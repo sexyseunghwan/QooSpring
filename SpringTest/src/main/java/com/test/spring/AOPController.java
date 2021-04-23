@@ -22,11 +22,13 @@ public class AOPController {
 
 		//시작 페이지
 		//int count = service.getCount();
-		System.out.println("==============");
+		//System.out.println("==============");
 		//System.out.println(service.m1());
-		System.out.println("==============");
+		//System.out.println("==============");
 		//request.setAttribute("count", count);
 		
+		//DBUtil db = new DBUtil();
+		//db.open();
 		
 		
 		return "result";//result.jsp 를 부르게 된다.

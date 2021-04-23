@@ -10,9 +10,10 @@
 <configuration>
 	
 	<!-- mybatis 에서 자주 사용하ㅣ는 자료형의 별칭을 붙일 수 있음. : 매퍼임 -->
-	<typeAliases>
+<!-- 	<typeAliases>
 		<typeAlias type="com.test.spring.CategoryDTO" alias="cdto"/>
 		<typeAlias type="com.test.spring.BoardDTO" alias="bdto"/>
-	</typeAliases>
+	</typeAliases> -->
+	
 	
 </configuration>
