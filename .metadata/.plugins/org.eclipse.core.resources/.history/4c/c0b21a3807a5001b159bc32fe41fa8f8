@@ -1,0 +1,6 @@
+package com.test.qoologin;
+
+public class LoginService implements ILoginService{
+	
+	
+}

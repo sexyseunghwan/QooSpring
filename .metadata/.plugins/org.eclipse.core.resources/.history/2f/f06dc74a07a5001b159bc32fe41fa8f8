@@ -1,0 +1,8 @@
+package com.test.qoologin;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LoginDAO {
+
+}

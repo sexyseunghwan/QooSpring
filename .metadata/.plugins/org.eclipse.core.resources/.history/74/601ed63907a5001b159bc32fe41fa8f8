@@ -1,0 +1,12 @@
+package com.test.qoologin;
+
+public class LoginService implements ILoginService{
+
+	@Override
+	public int login() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}

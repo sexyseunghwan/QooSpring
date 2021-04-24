@@ -21,10 +21,6 @@
 	
 	<update id="m9" parameterType="java.lang.String" statementType="CALLABLE">
 		
-<!-- 		CALL qoo10_test_mybatis(
-			#{@seller_id = #name,mode=IN},
-			#{@new_seller_nation = 'CN',mode=IN}
-		) -->
 		{
 		call qoo10_test_mybatis(#{name},'zz')
 		}
