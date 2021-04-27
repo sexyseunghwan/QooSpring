@@ -10,8 +10,12 @@ public class LoginDAO {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-//	public int login() {
-//		//template.selectOne(statement, handler);
-//	}
+	
+	public int userMaker(String name) {
+		
+		return template.insert("tuning.s1",name);
+				
+	}
+	
 	
 }

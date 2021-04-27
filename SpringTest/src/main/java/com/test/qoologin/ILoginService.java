@@ -2,6 +2,6 @@ package com.test.qoologin;
 
 public interface ILoginService {
 	
-	int login();
+	int userMaker(String name);
 
 }

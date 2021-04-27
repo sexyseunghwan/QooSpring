@@ -1,0 +1,24 @@
+package com.test.qoologin;
+
+import java.util.Random;
+
+public class UserMakerTool {
+	
+	private static Random rnd = new Random();
+	
+	public String getName() {
+		
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+		//System.out.println((char)65);
+		
+		
+	}
+
+}

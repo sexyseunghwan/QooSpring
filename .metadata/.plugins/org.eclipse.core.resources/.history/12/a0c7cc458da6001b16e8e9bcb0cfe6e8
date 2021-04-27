@@ -1,0 +1,20 @@
+package com.test.qoologin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class LoginService implements ILoginService{
+	
+	@Autowired
+	private LoginDAO dao;
+	
+	
+	@Override
+	public int userMaker(String name) {
+		
+		dao.userMaker();
+		
+		return 0;
+	}
+	
+	
+}

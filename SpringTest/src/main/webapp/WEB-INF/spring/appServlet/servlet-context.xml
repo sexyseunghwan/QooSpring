@@ -21,18 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.test.spring" />
+	<!-- 지금 여기가 변형된것읻 -->
+	<context:component-scan base-package="com.test.qoologin"/>
 	
-	<!-- AOP 어노테이션 사용 -->
-	<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
-	<!-- 
-		
-		이런식으로 적으면 
-		- AOP 적용을 기존방식(before advice ~ 막 xml로 난리치던거) 대신 
-		어노테이션을 사용할 수 있게 해준다.
-	
-	 -->
-	
-	
-	
+<!-- 	<context:component-scan base-package="com.test">
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+ -->
 </beans:beans>
