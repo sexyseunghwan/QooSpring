@@ -1,0 +1,7 @@
+package com.test.qoologin;
+
+public interface ITuningService {
+	
+	void s1(String qoouser_id, String qoouser_pw, String qoouser_birthday, String qoouser_email, String qoouser_gender, String qoouser_nation, String qoouser_ipaddress, int qoouser_hascoin, String qoouser_phone_num, int qoouser_grade, String qoouser_receive_email, String qoouser_receive_sms, String qoouser_denide, String qoouser_register_datetime, String qoouser_lastlogin_datetime, String qoouser_lastlogin_ipaddress);
+
+}

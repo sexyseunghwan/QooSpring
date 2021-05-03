@@ -7,6 +7,7 @@ public class MyBatisDTO {
 	private String age;
 	private String etc;
 	
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -32,6 +33,5 @@ public class MyBatisDTO {
 		this.etc = etc;
 	}
 
-	
-	
+		
 }

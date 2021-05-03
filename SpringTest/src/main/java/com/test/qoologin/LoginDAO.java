@@ -11,11 +11,11 @@ public class LoginDAO {
 	private SqlSessionTemplate template;
 	
 	
-	public int userMaker(String name) {
-		
-		return template.insert("tuning.s1",name);
-				
-	}
+//	public int userMaker(String name) {
+//		
+//		return template.insert("tuning.s1",name);
+//				
+//	}
 	
 	
 }

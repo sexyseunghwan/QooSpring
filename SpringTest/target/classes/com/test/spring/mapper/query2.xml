@@ -12,10 +12,10 @@
  -->
 <mapper namespace="tuning">
 	
-	<update id="s1" parameterType="java.lang.String" statementType="CALLABLE">
+	<update id="s1" parameterType="com.test.qoologin.UserDTO" statementType="CALLABLE">
 		
 		{
-			call dbo.cust_generator (#{name})
+			call dbo.qoo10_dummy_init (#{qoouser_id},#{qoouser_pw},#{qoouser_birthday},#{qoouser_email},#{qoouser_gender},#{qoouser_nation},#{qoouser_ipaddress},#{qoouser_hascoin},#{qoouser_phone_num},#{qoouser_grade},#{qoouser_receive_email},#{qoouser_receive_sms},#{qoouser_denide},#{qoouser_register_datetime},#{qoouser_lastlogin_datetime},#{qoouser_lastlogin_ipaddress})
 		}
 	
 	</update>

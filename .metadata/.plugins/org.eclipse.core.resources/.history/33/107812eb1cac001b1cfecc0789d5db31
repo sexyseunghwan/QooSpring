@@ -1,0 +1,18 @@
+package com.test.qoologin;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class TuningDAO {
+	
+	@Autowired
+	private SqlSessionTemplate template;
+	
+	public void userMaker(String qoouser_id, String qoouser_pw, String qoouser_birthday, String qoouser_email, String qoouser_gender, String qoouser_nation, String qoouser_ipaddress, int qoouser_hascoin, String qoouser_phone_num, int qoouser_grade, String qoouser_receive_email, String qoouser_receive_sms, String qoouser_denide, String qoouser_register_datetime, String qoouser_lastlogin_datetime, String qoouser_lastlogin_ipaddress) {
+		
+		template.insert("tuning.s1");
+		
+	}	
+}

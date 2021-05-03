@@ -1,0 +1,16 @@
+package com.test.qoologin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class TuningService {
+	
+	@Autowired
+	private TuningDAO dao;
+	
+	
+	@Override
+	public void s1() {
+		
+	}
+	
+}

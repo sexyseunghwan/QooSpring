@@ -1,0 +1,7 @@
+package com.test.qoologin;
+
+public interface ILoginService {
+	
+	void userMaker(String name);
+
+}
