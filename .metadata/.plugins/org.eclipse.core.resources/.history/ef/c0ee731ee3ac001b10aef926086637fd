@@ -12,7 +12,7 @@ public class TuningDAO {
 	
 	public void userMaker(UserDTO dto) {
 		
-		//System.out.println(dto.getQoouser_id());
+		System.out.println(dto.getQoouser_id());
 		
 		template.insert("tuning.s1",dto);
 		

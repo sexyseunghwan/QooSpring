@@ -1,7 +1,0 @@
-package com.test.spring;
-
-public interface IMyBatisService {
-	
-	void m1();
-	
-}

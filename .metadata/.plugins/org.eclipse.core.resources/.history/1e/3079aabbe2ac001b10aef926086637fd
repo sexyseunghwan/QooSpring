@@ -118,7 +118,7 @@ public class MainController {
 		UserMakerTool um = new UserMakerTool();
 		
 		
-		for (int i = 0; i < 2000000; i++) {
+		for (int i = 0; i < 10; i++) {
 	      	
 			UserDTO dto = new UserDTO();
 			
@@ -177,7 +177,7 @@ public class MainController {
 			//writer.write(query);
 			//writer.newLine();
 			
-			//System.out.println(dto.getQoouser_birthday());
+			System.out.println(dto.getQoouser_birthday());
 			
 			iservice.s1(dto);
 			

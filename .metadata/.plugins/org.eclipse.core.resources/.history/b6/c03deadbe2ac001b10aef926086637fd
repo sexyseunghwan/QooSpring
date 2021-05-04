@@ -177,7 +177,7 @@ public class MainController {
 			//writer.write(query);
 			//writer.newLine();
 			
-			//System.out.println(dto.getQoouser_birthday());
+			System.out.println(dto.getQoouser_birthday());
 			
 			iservice.s1(dto);
 			
