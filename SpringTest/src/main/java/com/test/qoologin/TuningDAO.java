@@ -16,5 +16,12 @@ public class TuningDAO {
 		
 		template.insert("tuning.s1",dto);
 		
-	}	
+	}
+	
+	public void buyMaker(BuyDTO dto) {
+		
+		template.insert("tuning.s2",dto);
+		
+	}
+	
 }

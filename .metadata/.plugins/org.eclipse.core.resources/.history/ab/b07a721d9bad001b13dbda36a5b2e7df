@@ -1,0 +1,13 @@
+package com.test.qoologin;
+
+import java.util.Random;
+
+public class BuyMakerTool {
+	
+	private static Random rnd = new Random();
+	
+	
+	
+	
+
+}

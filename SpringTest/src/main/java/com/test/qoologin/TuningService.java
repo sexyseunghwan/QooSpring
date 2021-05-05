@@ -20,5 +20,14 @@ public class TuningService implements ITuningService {
 		dao.userMaker(dto);
 		
 	}
+
+
+	@Override
+	public void k1(BuyDTO dto) {
+		
+		dao.buyMaker(dto);
+		
+	}
+
 	
 }

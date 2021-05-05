@@ -122,9 +122,8 @@ public class MainController {
 	      	
 			UserDTO dto = new UserDTO();
 			
-			//String qoouser_id = um.pushId(5,6);
 			dto.setQoouser_id(um.pushId(5,6));
-			//System.out.println(qoouser_id);
+			
 			String pw = um.getPassWord();
 			um.writePw(pw);
 			
@@ -172,21 +171,39 @@ public class MainController {
 			
 			String qoouser_lastlogin_ipaddress = um.ipAddress();
 			dto.setQoouser_lastlogin_ipaddress(qoouser_lastlogin_ipaddress);
-			//String query = String.format("insert into dbo.QOO10USER values ('%s','%s','%s','%s','%s','%s',%d)", id,pw,email,gender,nation,ipAddress,hascoin);
-			
-			//writer.write(query);
-			//writer.newLine();
-			
-			//System.out.println(dto.getQoouser_birthday());
-			
+
 			iservice.s1(dto);
 			
-//			dao.insertTuning(qoouser_id, qoouser_pw, qoouser_birthday,qoouser_email, qoouser_gender, qoouser_nation, 
-//							 qoouser_ipaddress, qoouser_hascoin,qoouser_phone_num,qoouser_grade,qoouser_receive_email,
-//							 qoouser_receive_sms,qoouser_denide,qoouser_register_datetime,qoouser_lastlogin_datetime,qoouser_lastlogin_ipaddress);
+
+		
+		
+		}
 		
 		
 		
+		return "result";
+	}
+	
+	@RequestMapping(value = "/s4.action", method = { RequestMethod.GET })
+	public String s4(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		BuyMakerTool bmt = new BuyMakerTool();
+		
+		for (int i = 0; i < 10000000 ; i++) {
+			
+			BuyDTO dto = new BuyDTO();
+			
+			dto.setBuy_qoouser_seq(bmt.userSeq());
+			dto.setProduct_serial(bmt.productSeq());
+			dto.setProduct_quantity(bmt.productQuantity());
+			String[] totalDate = bmt.buyDate().split("~");
+			
+			dto.setBuy_date(totalDate[0]);
+			dto.setBuy_confirm_date(totalDate[1]);
+			
+			
+			iservice.k1(dto);
+			
 		}
 		
 		

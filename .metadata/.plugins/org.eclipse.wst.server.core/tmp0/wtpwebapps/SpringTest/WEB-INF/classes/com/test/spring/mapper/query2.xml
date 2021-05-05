@@ -20,6 +20,18 @@
 	
 	</update>
 	
+	<update id="s2" parameterType="com.test.qoologin.BuyDTO" statementType="CALLABLE">
+		
+		{
+			call dbo.qoo10_buy_dummy (#{buy_qoouser_seq}
+									 ,#{product_serial}
+									 ,#{product_quantity}
+									 ,#{buy_date}
+									 ,#{buy_confirm_date})
+		}
+	
+	</update>
+	
 </mapper>
 
 

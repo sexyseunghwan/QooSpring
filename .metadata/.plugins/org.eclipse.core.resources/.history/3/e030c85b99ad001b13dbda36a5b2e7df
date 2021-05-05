@@ -1,0 +1,10 @@
+package com.test.qoologin;
+
+import lombok.Data;
+
+@Data
+public class BuyDTO {
+	
+	
+
+}
