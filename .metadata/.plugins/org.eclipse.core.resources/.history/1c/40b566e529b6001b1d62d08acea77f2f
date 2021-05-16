@@ -1,0 +1,8 @@
+package com.test.qoologin;
+
+public interface ILoginServiceReal {
+
+	
+	String userIp();
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.test.IpInfo&apos; to &apos;com.test.loginetc&apos;&#x0D;&#x0A;- Original project: &apos;SpringTest&apos;&#x0D;&#x0A;- Original element: &apos;SpringTest/src/main/java/com.test.IpInfo&apos;&#x0D;&#x0A;- Renamed element: &apos;SpringTest/src/main/java/com.test.loginetc&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.test.IpInfo&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.test.IpInfo" name="com.test.loginetc" qualified="false" references="true" stamp="1621158456754" textual="false" version="1.0"/>
+</session>

@@ -32,6 +32,14 @@
 	
 	</update>
 	
+	<select id="loginVerification" resultType="Integer" parameterType="java.util.HashMap" statementType="CALLABLE" >
+		declare @login_code int
+		exec dbo.qoo10_total_login #{userIp}, #{id}, #{encpw}, @login_code output
+		select @login_code	
+	</select>
+	
+	
+	
 </mapper>
 
 

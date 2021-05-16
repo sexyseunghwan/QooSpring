@@ -1,0 +1,25 @@
+package com.test.qoologin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.IpInfo.Iphelper;
+
+@Service
+public class LoginServiceReal implements ILoginServiceReal{
+
+	@Autowired
+	private LoginDAO dao;
+
+	@Override
+	public String ipCheck() {
+		
+		Iphelper ip = new Iphelper();
+		
+		
+		return null;
+	}
+	
+	
+	
+}

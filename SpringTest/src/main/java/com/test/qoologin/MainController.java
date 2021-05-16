@@ -1,7 +1,7 @@
 package com.test.qoologin;
 
-import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +25,51 @@ public class MainController {
 	
 	@Autowired
 	private ITuningService iservice;
+	
+	@Autowired
+	private LoginServiceReal logService;
+	
+	//처음에 로그인 페이지로 보내주는 곳
+	@RequestMapping(value = "/login.action", method = { RequestMethod.GET })
+	public String login(HttpServletRequest request, HttpServletResponse response) {
+		
+		
+		return "qoolog";
+	}
+	
+	//처음에 로그인 페이지로 보내주는 곳
+	@RequestMapping(value = "/loginVerification.action", method = { RequestMethod.POST })
+	public String loginVerification(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+			
+			request.setCharacterEncoding("UTF-8");
+		
+			String id = (String)request.getParameter("id");//아이디
+			String pw = (String)request.getParameter("pw");//비밀번호
+		
+			String ip = logService.ipCheck(request);//ip check를 해준다.
+			String encPw = logService.pwEnc(pw);//상대방이 입력한 pw를 암호화작업해준다.
+			
+			System.out.println(ip);
+			System.out.println(encPw);
+			
+			int loginResult = logService.loginResult(ip, id, encPw);
+			
+			if (loginResult == 0) {// 로그인 성공
+				System.out.println("로그인 성공");
+				return "qoolog";
+			} else if (loginResult == 1) {//로그인 실패 : 잘못된 로그인 정보
+				System.out.println("잘못된 로그인 정보");
+				return "qoolog";
+			} else if (loginResult == -1) {//로그인 실패 : 아이피 승인 불가
+				System.out.println("아이피 승인 불가");
+				return "qoolog";
+			} else {//보안정책을 따라야하는 경우
+				System.out.println("보안정책을 따라야한다.");
+				return "qoolog";
+			}
+			
+	}
+	
 	
 	@RequestMapping(value = "/s1.action", method = { RequestMethod.GET })
 	public String s1(HttpServletRequest request, HttpServletResponse response) {
@@ -118,7 +163,7 @@ public class MainController {
 		UserMakerTool um = new UserMakerTool();
 		
 		
-		for (int i = 0; i < 2000000; i++) {
+		for (int i = 0; i < 10000; i++) {
 	      	
 			UserDTO dto = new UserDTO();
 			
@@ -186,6 +231,33 @@ public class MainController {
 	
 	@RequestMapping(value = "/s4.action", method = { RequestMethod.GET })
 	public String s4(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		BuyMakerTool bmt = new BuyMakerTool();
+		
+		for (int i = 0; i < 50000 ; i++) {
+			
+			BuyDTO dto = new BuyDTO();
+			
+			dto.setBuy_qoouser_seq(bmt.userSeq());
+			dto.setProduct_serial(bmt.productSeq());
+			dto.setProduct_quantity(bmt.productQuantity());
+			String[] totalDate = bmt.buyDate().split("~");
+			
+			dto.setBuy_date(totalDate[0]);
+			dto.setBuy_confirm_date(totalDate[1]);
+			
+			
+			iservice.k1(dto);
+			
+		}
+		
+		
+		
+		return "result";
+	}
+	
+	@RequestMapping(value = "/s5.action", method = { RequestMethod.GET })
+	public String s5(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		BuyMakerTool bmt = new BuyMakerTool();
 		

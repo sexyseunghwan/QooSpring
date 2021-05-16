@@ -10,7 +10,8 @@ public class BuyMakerTool {
 	//구매한 회원 번호
 	public int userSeq() {
 		
-		return rnd.nextInt(2000000)+1; 
+		//return rnd.nextInt(2000000)+1;
+		return rnd.nextInt(20000)+1;
 	}
 	
 	//제품 고유 번호

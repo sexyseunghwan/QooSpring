@@ -1,0 +1,8 @@
+package com.test.qoologin;
+
+public interface ILoginServiceReal {
+
+	
+	String ipCheck();//접속자의 ip 체크
+	
+}

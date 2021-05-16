@@ -1,0 +1,29 @@
+package com.test.qoologin;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LoginDAO {
+
+	@Autowired
+	private SqlSessionTemplate template;
+	
+	
+	public int loginResult(String userIp,String id,String pw) {
+		
+		Map<String, String> idpwMap = new HashMap<String, String>();
+		idpwMap.put("id", id);
+		idpwMap.put("pw", pw);
+		
+		
+		return template.update("tuning.loginVerification",idpwMap);
+	}
+	
+	
+	
+}
