@@ -123,7 +123,7 @@
 			$.ajax({
 				//요청 정보
 				type: "POST",
-				url: "/spring/s2.action",
+				url: "/spring/autologinCheck.action",
 				
 				//전송 데이터
 				//data: "num=10"
@@ -136,19 +136,19 @@
 				//수신 데이터
 				success: function(result) {
 						
-					$("#" + result.clickNum).css({"background":"url(/resources/images/securefile/" + result.selectPic +")"})
+					$("#" + result.clickNum).css({"background":"url(resources/images/securefile/" + result.selectPic +")"})
 							  				.css({"background-size":"cover"});
 					
 					//아래부터는 임의적으로 바꾸어줄것
 					//정답이 포함된 그림 꼭 하나는 들어갈것
-					$("#" + result.ansImg_1).css({"background":"url(/resources/images/securefile/" + result.ansImg_1_value +")"})
+					$("#" + result.ansImg_1).css({"background":"url(resources/images/securefile/" + result.ansImg_1_value +")"})
 	  				.css({"background-size":"cover"});
 					
 					//나머지는 아무그림이나 들어갈것
-					$("#" + result.ansImg_2).css({"background":"url(/resources/images/securefile/" + result.ansImg_2_value +")"})
+					$("#" + result.ansImg_2).css({"background":"url(resources/images/securefile/" + result.ansImg_2_value +")"})
 	  				.css({"background-size":"cover"});
 					
-					$("#" + result.ansImg_3).css({"background":"url(/resources/images/securefile/" + result.ansImg_3_value +")"})
+					$("#" + result.ansImg_3).css({"background":"url(resources/images/securefile/" + result.ansImg_3_value +")"})
 	  				.css({"background-size":"cover"});
 					
 					
