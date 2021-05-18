@@ -23,7 +23,7 @@ public class Encryption {
 			  				  	     "f",")",";","p","g","s",",","a","o","{",
 			  				  	     "u","+","y","r","e","w","-","\\","|"," "};
 	
-	private String valueKey = "NaPleo";//암호키**masterkey
+	private String valueKey = "NaPleo";//암호키
 	
 	//암호화키판 리턴시켜준다.
 	public String[][] initialMatrix() {

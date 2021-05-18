@@ -68,8 +68,6 @@ public class MainController {
 				
 				request = logService.AutoLoginBanned(request);
 				
-				//System.out.println(request.getAttribute("picList"));
-				//System.out.println(request.getAttribute("picName"));
 				
 				return "autologin";
 			}	
@@ -78,7 +76,7 @@ public class MainController {
 	@RequestMapping(value = "/autologinCheck.action", method = { RequestMethod.POST })
 	public void autologinCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			
-		PrintWriter out = response.getWriter();//? 이게 뭐지
+		PrintWriter out = response.getWriter();
 		JSONObject obj = logService.picCheck(request);
 		
 		out.print(obj);			
