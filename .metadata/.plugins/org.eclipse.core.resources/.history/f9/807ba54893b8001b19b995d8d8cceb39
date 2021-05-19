@@ -1,0 +1,9 @@
+package com.test.loginetc;
+
+import lombok.Data;
+
+@Data
+public class AdverDTO {
+	
+
+}

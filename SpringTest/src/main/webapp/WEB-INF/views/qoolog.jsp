@@ -63,6 +63,30 @@
         #inputpw:focus {
             outline:none;
         }
+        
+        /* 광고관련 */
+        #advertise {
+            height: 200px;
+        }
+
+        #advertise:hover{
+            cursor: pointer;
+        }
+        #etcinfo {
+            margin: 5px auto;
+            width : 260px;
+            height : 30px;
+            padding: 6px;
+        }
+
+        #etcinfo a,span {
+            color: #8E8E8E;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+         #etcinfo:hover {
+             cursor : pointer;
+         }
 		
     </style>
 </head>
@@ -88,15 +112,32 @@
         </div>
     </form>
     
-    <div id = "copyright">
+    <div id = "etcinfo">
+        <a target="_blank" href = "">아이디 찾기</a>
+        <span class = "bar">|</span>
+        <a target="_blank" href = "">비밀번호 찾기</a>
+        <span class = "bar">|</span>
+        <a target="_blank" href = "/spring/signUp.action">회원 가입</a>
+    </div>
+
+    <div id = "copyright" style="font-family: 'NEXON Lv1 Gothic OTF'">
         Copyright &copy; <span style="font-weight: bold;">Qoo10 Corp.</span> All rights reserved.
     </div>
 	
-	
-    <script>
-    	
-    </script>
+	<!-- 광고칸 -->
+    <div id = "advertise" class = "inputform" style = "background: url('resources/images/adver/${picName}'); background-size: cover;"></div>
 
+
+
+    <script>
+        
+        //광고 클릭했을 경우
+        $("#advertise").click(function(){
+            location.href = '${url}'
+        });
+
+
+    </script>
 
 </body>
 </html>

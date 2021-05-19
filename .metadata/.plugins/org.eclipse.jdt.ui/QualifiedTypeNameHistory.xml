@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="com.test.qoologin.UserDTO"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="com.test.qoologin.BuyDTO"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.test.qoologin.BuyMakerTool"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -18,4 +17,7 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="com.test.qoologin.MainController"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.test.loginetc.AdverDTO"/>
+<fullyQualifiedTypeName name="com.test.qoologin.LoginServiceReal"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

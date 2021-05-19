@@ -1,0 +1,13 @@
+package com.test.loginetc;
+
+import lombok.Data;
+
+@Data
+public class AdverDTO {
+	
+	private String adName;
+	private String adpPcUrl;
+	private String adUrl;
+	private int adPriceMonthly;
+
+}

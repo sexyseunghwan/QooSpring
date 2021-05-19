@@ -2,12 +2,9 @@ package com.test.qoologin;
 
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.test.loginetc.AdverDTO;
 import com.test.pwenc.Encmatrix;
 
 @Controller
@@ -32,6 +30,15 @@ public class MainController {
 	//처음에 로그인 페이지로 보내주는 곳
 	@RequestMapping(value = "/login.action", method = { RequestMethod.GET })
 	public String login(HttpServletRequest request, HttpServletResponse response) {
+		
+		//광고관련 넘겨야 한다.
+		
+		AdverDTO addPic = logService.adver();
+		String picName = addPic.getAdpPcUrl();
+		String url = addPic.getAdUrl();
+		
+		request.setAttribute("picName", picName);
+		request.setAttribute("url", url);
 		
 		
 		return "qoolog";
@@ -80,6 +87,14 @@ public class MainController {
 		JSONObject obj = logService.picCheck(request);
 		
 		out.print(obj);			
+	}
+	
+	//회원가입 페이지
+	@RequestMapping(value = "/signUp.action", method = { RequestMethod.GET })
+	public String signUp(HttpServletRequest request, HttpServletResponse response) {
+			
+			
+		return "qoosignup";
 	}
 	
 	

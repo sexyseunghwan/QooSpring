@@ -3,6 +3,7 @@ package com.test.qoologin;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.test.loginetc.AdverDTO;
 import com.test.loginetc.AutoLoginPic;
 import com.test.loginetc.Encryption;
 import com.test.loginetc.Iphelper;
@@ -115,6 +117,20 @@ public class LoginServiceReal implements ILoginServiceReal{
 		obj.put("sucessCount",sucessCount);
 		
 		return obj;
+	}
+	
+	@Override
+	public AdverDTO adver() {//db 로부터 광고 데이터를 가져와서 어떤식으로 뿌릴지 로직을 짜주면된다.
+		
+		Random rnd = new Random();
+		List<AdverDTO> dtoList = dao.getAdvertiseInfo();
+		
+		
+		//금액에 맞춰서 내보내야 하지만
+		
+		
+		
+		return dtoList.get(rnd.nextInt(dtoList.size()));
 	}
 	
 	

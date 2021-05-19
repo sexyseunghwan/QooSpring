@@ -38,6 +38,14 @@
 		select @login_code	
 	</select>
 	
+	<select id="advertiseShow" resultType="com.test.loginetc.AdverDTO" statementType="CALLABLE" >
+		
+		{
+			call dbo.advertise_show
+		}
+		
+	</select>
+	
 	
 	
 </mapper>

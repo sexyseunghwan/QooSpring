@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.json.simple.JSONObject;
 
+import com.test.loginetc.AdverDTO;
+
 public interface ILoginServiceReal {
 
 	
@@ -16,6 +18,8 @@ public interface ILoginServiceReal {
 	HttpServletRequest AutoLoginBanned(HttpServletRequest request);//자동로그인 방지를 위함
 
 	JSONObject picCheck(HttpServletRequest request);//자동로그인 --> 그림을 계속 변경해주는것
+
+	AdverDTO adver();//광고보내주는곳
 	
 	
 }
