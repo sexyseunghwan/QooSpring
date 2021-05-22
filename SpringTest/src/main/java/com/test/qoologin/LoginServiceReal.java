@@ -1,6 +1,5 @@
 package com.test.qoologin;
 
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -16,6 +15,7 @@ import com.test.loginetc.AdverDTO;
 import com.test.loginetc.AutoLoginPic;
 import com.test.loginetc.Encryption;
 import com.test.loginetc.Iphelper;
+import com.test.loginetc.SignUpDTO;
 
 @Service
 public class LoginServiceReal implements ILoginServiceReal{
@@ -131,6 +131,83 @@ public class LoginServiceReal implements ILoginServiceReal{
 		
 		
 		return dtoList.get(rnd.nextInt(dtoList.size()));
+	}
+	
+	@Override
+	public String dateTypeConvert(String input) {
+		
+		if (input.length() == 1) {
+			input = "0" + input;
+		}
+		
+		return input;	
+	}
+	
+
+	@Override
+	public int signUp(HttpServletRequest request) {
+		
+		
+		String qoouser_id = request.getParameter("id_input");//회원가입 아이디
+		String qoouser_pw = pwEnc(request.getParameter("pw_input"));//암호화 해줘야한다. -> 회원가입 비밀번호
+		String qoouser_name = request.getParameter("name_input");// 회원가입 이름
+		String qoouser_gender = request.getParameter("sex_input");// 회원가입 성별
+		String qoouser_nation = request.getParameter("nation_input");// 회원가입 국가
+		
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append(request.getParameter("yy_input"));
+		sb.append("-");
+		sb.append(request.getParameter("mm_input"));
+		sb.append("-");
+		sb.append(dateTypeConvert(request.getParameter("dd_input")));
+		
+		String qoouser_birthday = sb.toString();// 회원가입 생년월일
+		String qoouser_phone_num = request.getParameter("phone_input");//회원가입 전화번호
+		
+		sb.setLength(0);//StringBuffer 객체 초기화
+		sb.append(request.getParameter("email_input_address"));
+		sb.append("@");
+		sb.append(request.getParameter("email_input_site"));
+		
+		String qoouser_email = sb.toString();//회원가입 이메일주소
+		String qoouser_receive_email = request.getParameter("email_agree_input");
+		String qoouser_receive_sms = request.getParameter("sms_agree_input");
+		
+		String qoouser_ipaddress = ipCheck(request);
+		
+		
+		SignUpDTO dto = new SignUpDTO();
+		dto.setQoouser_id(qoouser_id);
+		dto.setQoouser_pw(qoouser_pw);
+		dto.setQoouser_name(qoouser_name);
+		dto.setQoouser_gender(qoouser_gender);
+		dto.setQoouser_nation(qoouser_nation);
+		dto.setQoouser_birthday(qoouser_birthday);
+		dto.setQoouser_phone_num(qoouser_phone_num);
+		dto.setQoouser_email(qoouser_email);
+		dto.setQoouser_receive_email(qoouser_receive_email);
+		dto.setQoouser_receive_sms(qoouser_receive_sms);
+		dto.setQoouser_ipaddress(qoouser_ipaddress);
+		
+		
+		int result = dao.signUp(dto);
+		
+//		System.out.println(qoouser_id);
+//		System.out.println(qoouser_pw);
+//		System.out.println(qoouser_name);
+//		System.out.println(qoouser_gender);
+//		System.out.println(qoouser_nation);
+//		System.out.println(qoouser_birthday);
+//		System.out.println(qoouser_phone_num);
+//		System.out.println(qoouser_email);
+//		System.out.println(qoouser_receive_email);
+//		System.out.println(qoouser_receive_sms);
+//		System.out.println(qoouser_ipaddress);
+		
+
+		
+		return result;
 	}
 	
 	

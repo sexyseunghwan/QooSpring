@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.test.loginetc.AdverDTO;
+import com.test.loginetc.SignUpDTO;
 
 @Repository
 public class LoginDAO {
@@ -39,7 +40,18 @@ public class LoginDAO {
 		
 		return dtoList;
 	}
+	
+	//회원가입 해주는 메서드
+	public int signUp(SignUpDTO dto) {
+		
+		
+		
+		return template.selectOne("tuning.qooSignUpsp",dto);
+	}
 
+	
+	
+	//회원가입시켜주기
 
 	
 	

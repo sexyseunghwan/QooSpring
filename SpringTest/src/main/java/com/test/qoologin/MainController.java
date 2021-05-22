@@ -25,7 +25,7 @@ public class MainController {
 	private ITuningService iservice;
 	
 	@Autowired
-	private LoginServiceReal logService;
+	private ILoginServiceReal logService;
 	
 	//처음에 로그인 페이지로 보내주는 곳
 	@RequestMapping(value = "/login.action", method = { RequestMethod.GET })
@@ -95,6 +95,20 @@ public class MainController {
 			
 			
 		return "qoosignup";
+	}
+	
+	//회원가입 페이지
+	@RequestMapping(value = "/signUpGo.action", method = { RequestMethod.POST })
+	public String signUpGo(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+		
+		request.setCharacterEncoding("UTF-8");
+	
+		
+		int result = logService.signUp(request);
+		
+		System.out.println(result);
+						
+		return "result";
 	}
 	
 	
@@ -204,7 +218,7 @@ public class MainController {
 		
 		BuyMakerTool bmt = new BuyMakerTool();
 		
-		for (int i = 0; i < 10000000 ; i++) {
+		for (int i = 0; i < 20000000 ; i++) {
 			
 			BuyDTO dto = new BuyDTO();
 			

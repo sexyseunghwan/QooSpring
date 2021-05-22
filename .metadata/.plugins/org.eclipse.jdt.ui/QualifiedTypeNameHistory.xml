@@ -3,11 +3,9 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="com.test.spring.DBUtil"/>
 <fullyQualifiedTypeName name="com.test.qoologin.ILoginService"/>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="com.test.qoologin.UserMakerTool"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="com.test.qoologin.UserDTO"/>
-<fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="com.test.qoologin.BuyDTO"/>
 <fullyQualifiedTypeName name="com.test.qoologin.BuyMakerTool"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
@@ -15,9 +13,11 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.test.qoologin.LoginDAO"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="com.test.qoologin.MainController"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="com.test.loginetc.AdverDTO"/>
-<fullyQualifiedTypeName name="com.test.qoologin.LoginServiceReal"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="com.test.qoologin.MainController"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="com.test.qoologin.LoginServiceReal"/>
 </qualifiedTypeNameHistroy>

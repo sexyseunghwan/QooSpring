@@ -1,0 +1,36 @@
+package com.test.qoologin;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.json.simple.JSONObject;
+
+import com.test.loginetc.AdverDTO;
+
+public interface ILoginServiceReal {
+
+	
+	String ipCheck(HttpServletRequest request);//접속자의 ip 체크
+	
+	String pwEnc(String password);//비밀번호 암호화
+	
+	int loginResult(String userIp,String id,String pw);//로그인 결과
+
+	HttpServletRequest AutoLoginBanned(HttpServletRequest request);//자동로그인 방지를 위함
+
+	JSONObject picCheck(HttpServletRequest request);//자동로그인 --> 그림을 계속 변경해주는것
+
+	AdverDTO adver();//광고보내주는곳
+	
+	//회원가입 하게 해주는곳 --> 이렇게 매개변수를 많이 넘길 이유가 있나?
+	int signUp(String id_input, String pw_input, String name_input, String sex_input, String nation_input,
+			String yy_input, String mm_input, String dd_input, String phone_input, String email_input_address, String email_input_site,
+			String email_agree_input, String sms_agree_input);
+	
+	//날짜형식을 바꿔주는곳
+	String dateTypeConvert(String input);
+	
+	//회원가입 다시 해주는곳
+	int signUp(HttpServletRequest request);
+	
+	
+}

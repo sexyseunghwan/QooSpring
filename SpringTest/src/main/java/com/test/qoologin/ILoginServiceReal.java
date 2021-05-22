@@ -21,5 +21,11 @@ public interface ILoginServiceReal {
 
 	AdverDTO adver();//광고보내주는곳
 	
+	//날짜형식을 바꿔주는곳
+	String dateTypeConvert(String input);
+	
+	//회원가입 다시 해주는곳
+	int signUp(HttpServletRequest request);
+	
 	
 }
