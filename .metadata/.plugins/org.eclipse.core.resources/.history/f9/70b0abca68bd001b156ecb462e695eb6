@@ -27,16 +27,12 @@ public class LoginDAO {
 		loginCheckMap.put("id", id);
 		loginCheckMap.put("encpw", encpw);
 		
-		System.out.println("===============");
-		System.out.println("userIp : " + loginCheckMap.get("userIp"));
-		System.out.println("id : " + loginCheckMap.get("id"));
-		System.out.println("encpw : " +loginCheckMap.get("encpw"));
-		System.out.println("===============");
 		
-		int result = template.selectOne("tuning.loginVerification",loginCheckMap);
-		System.out.println("result : " + result);
+		System.out.println(loginCheckMap.get("userIp"));
+		System.out.println(loginCheckMap.get("id"));
+		System.out.println(loginCheckMap.get("encpw"));
 		
-		return result;
+		return template.selectOne("tuning.loginVerification",loginCheckMap);
 	}
 
 	//광고 넣기

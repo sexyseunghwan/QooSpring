@@ -33,10 +33,7 @@ public class LoginDAO {
 		System.out.println("encpw : " +loginCheckMap.get("encpw"));
 		System.out.println("===============");
 		
-		int result = template.selectOne("tuning.loginVerification",loginCheckMap);
-		System.out.println("result : " + result);
-		
-		return result;
+		return template.selectOne("tuning.loginVerification",loginCheckMap);
 	}
 
 	//광고 넣기

@@ -34,9 +34,8 @@ public class LoginDAO {
 		System.out.println("===============");
 		
 		int result = template.selectOne("tuning.loginVerification",loginCheckMap);
-		System.out.println("result : " + result);
 		
-		return result;
+		return 
 	}
 
 	//광고 넣기

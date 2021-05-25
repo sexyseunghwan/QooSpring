@@ -60,7 +60,6 @@ public class MainController {
 			System.out.println(encPw);
 			
 			int loginResult = logService.loginResult(ip, id, encPw);//여기서 오류가 발생하는데?
-			System.out.println(loginResult);
 			
 			if (loginResult == 0) {// 로그인 성공
 				System.out.println("로그인 성공");
