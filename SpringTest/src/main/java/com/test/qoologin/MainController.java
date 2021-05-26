@@ -56,11 +56,8 @@ public class MainController {
 			String ip = logService.ipCheck(request);//ip check를 해준다.
 			String encPw = logService.pwEnc(pw);//상대방이 입력한 pw를 암호화작업해준다.
 			
-			System.out.println(ip);
-			System.out.println(encPw);
+			int loginResult = logService.loginResult(ip, id, encPw);
 			
-			int loginResult = logService.loginResult(ip, id, encPw);//여기서 오류가 발생하는데?
-			System.out.println(loginResult);
 			
 			if (loginResult == 0) {// 로그인 성공
 				System.out.println("로그인 성공");
@@ -75,6 +72,8 @@ public class MainController {
 				System.out.println("보안정책을 따라야한다.");
 				
 				request = logService.AutoLoginBanned(request);
+				//여기서 보안정책에 대해 
+				
 				
 				
 				return "autologin";

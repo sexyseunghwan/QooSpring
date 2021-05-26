@@ -19,6 +19,7 @@ public class LoginDAO {
 	private SqlSessionTemplate template;
 	
 	
+	//로그인 결과
 	public int loginResult(String userIp,String id,String encpw) {
 		
 		Map<String, String> loginCheckMap = new HashMap<String, String>();
@@ -27,14 +28,7 @@ public class LoginDAO {
 		loginCheckMap.put("id", id);
 		loginCheckMap.put("encpw", encpw);
 		
-		System.out.println("===============");
-		System.out.println("userIp : " + loginCheckMap.get("userIp"));
-		System.out.println("id : " + loginCheckMap.get("id"));
-		System.out.println("encpw : " +loginCheckMap.get("encpw"));
-		System.out.println("===============");
-		
 		int result = template.selectOne("tuning.loginVerification",loginCheckMap);
-		System.out.println("result : " + result);
 		
 		return result;
 	}
@@ -51,8 +45,6 @@ public class LoginDAO {
 	
 	//회원가입 해주는 메서드
 	public int signUp(SignUpDTO dto) {
-		
-		
 		
 		return template.selectOne("tuning.qooSignUpsp",dto);
 	}

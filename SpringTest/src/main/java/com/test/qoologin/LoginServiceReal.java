@@ -68,6 +68,7 @@ public class LoginServiceReal implements ILoginServiceReal{
 	
 	@Override
 	public JSONObject picCheck(HttpServletRequest request) {
+		
 		HttpSession userSession = request.getSession();
 		int sucessCount = (Integer) userSession.getAttribute("sucessCount");
 		
@@ -192,19 +193,6 @@ public class LoginServiceReal implements ILoginServiceReal{
 		
 		
 		int result = dao.signUp(dto);
-		
-//		System.out.println(qoouser_id);
-//		System.out.println(qoouser_pw);
-//		System.out.println(qoouser_name);
-//		System.out.println(qoouser_gender);
-//		System.out.println(qoouser_nation);
-//		System.out.println(qoouser_birthday);
-//		System.out.println(qoouser_phone_num);
-//		System.out.println(qoouser_email);
-//		System.out.println(qoouser_receive_email);
-//		System.out.println(qoouser_receive_sms);
-//		System.out.println(qoouser_ipaddress);
-		
 
 		
 		return result;
