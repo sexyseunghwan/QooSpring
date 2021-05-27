@@ -95,7 +95,7 @@ public class Autologin {
 			String[] valuesAnswerLie = new String[2];
 			int answerPicIndexLie = rnd.nextInt(seatList.size());
 			valuesAnswerLie[0] = seatList.get(answerPicIndexLie);
-			seatList.remove(answerPicIndexLie);// 뽑아내서 지워준다.
+			seatList.remove(answerPicIndexLie);//뽑아내서 지워준다.
 			valuesAnswerLie[1] = imgMakers();
 			map.put(i+1,valuesAnswerLie);
 		}

@@ -2,9 +2,11 @@ package com.test.qoologin;
 
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +33,11 @@ public class MainController {
 	@RequestMapping(value = "/login.action", method = { RequestMethod.GET })
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		
+		
 		//광고관련 넘겨야 한다.
-		
-		AdverDTO addPic = logService.adver();
-		String picName = addPic.getAdpPcUrl();
-		String url = addPic.getAdUrl();
-		
-		request.setAttribute("picName", picName);
-		request.setAttribute("url", url);
-		
+		Map<String,String> adverMap = logService.adver(0);
+		request.setAttribute("adverMap", adverMap);
+
 		
 		return "qoolog";
 	}
@@ -62,17 +60,18 @@ public class MainController {
 			if (loginResult == 0) {// 로그인 성공
 				System.out.println("로그인 성공");
 				return "qoolog";
-			} else if (loginResult == 1) {//로그인 실패 : 잘못된 로그인 정보
+			} else if (loginResult == 1 || loginResult == -1) {//로그인 실패 : 잘못된 로그인 정보 and 벤당한 아이피 들어오는경우
 				System.out.println("잘못된 로그인 정보");
-				return "qoolog";
-			} else if (loginResult == -1) {//로그인 실패 : 아이피 승인 불가
-				System.out.println("아이피 승인 불가");
+				
+				Map<String,String> adverMap = logService.adver(-1);
+				request.setAttribute("adverMap", adverMap);
+				
 				return "qoolog";
 			} else {//보안정책을 따라야하는 경우
 				System.out.println("보안정책을 따라야한다.");
 				
 				request = logService.AutoLoginBanned(request);
-				//여기서 보안정책에 대해 
+				//여기서 보안정책에 대해 성공한 경우는 또 로그인기록등을 남겨줘야 한다.
 				
 				
 				

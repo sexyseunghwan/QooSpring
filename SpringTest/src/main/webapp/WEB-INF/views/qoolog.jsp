@@ -87,6 +87,14 @@
          #etcinfo:hover {
              cursor : pointer;
          }
+         
+         /* 로그인 실패했을때 띄워줄것 */
+         #errorLogin {
+             width : 340px;
+             margin : 0px auto;   
+             color : red;
+             text-align: center;
+         }
 		
     </style>
 </head>
@@ -106,6 +114,10 @@
         <div class = "inputform">
             <input type="password" name = "pw" autocomplete="off" id = "inputpw" placeholder = "비밀번호">
         </div>
+        <div id = "errorLogin" style = "display: <c:out value="${adverMap['errorLogin']}"/>;">
+            &nbsp;가입되지 않은 아이디이거나, 잘못된 비밀번호 입니다.
+       	</div>       
+        
         <!-- 로그인 버튼 -->
         <div class = "inputform">
             <input id = "go" type="submit" value = "SIGN IN" style = "font-weight: bold; font-size: 1.3em; background-color: #EC2E3C; color:white;">
@@ -125,15 +137,14 @@
     </div>
 	
 	<!-- 광고칸 -->
-    <div id = "advertise" class = "inputform" style = "background: url('resources/images/adver/${picName}'); background-size: cover;"></div>
-
+	<div id = "advertise" class = "inputform" style = "background: url('resources/images/adver/<c:out value="${adverMap['picName']}"/>'); background-size: cover;"></div>
 
 
     <script>
         
         //광고 클릭했을 경우
         $("#advertise").click(function(){
-            location.href = '${url}'
+        	location.href = '<c:out value="${adverMap['url']}"/>'
         });
 
 

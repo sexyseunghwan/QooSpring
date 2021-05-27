@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.test.qoologin.LoginDAO"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="com.test.loginetc.AdverDTO"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
@@ -20,4 +19,6 @@
 <fullyQualifiedTypeName name="com.test.qoologin.MainController"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="com.test.qoologin.LoginServiceReal"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

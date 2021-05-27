@@ -1,5 +1,6 @@
 package com.test.qoologin;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -121,17 +122,28 @@ public class LoginServiceReal implements ILoginServiceReal{
 	}
 	
 	@Override
-	public AdverDTO adver() {//db 로부터 광고 데이터를 가져와서 어떤식으로 뿌릴지 로직을 짜주면된다.
+	public HashMap<String,String> adver(int errorcode) {//db 로부터 광고 데이터를 가져와서 어떤식으로 뿌릴지 로직을 짜주면된다.
+		
 		
 		Random rnd = new Random();
 		List<AdverDTO> dtoList = dao.getAdvertiseInfo();
 		
+		//금액에 맞춰서 내보내야 하지만 -> 이건 후에 지금은 "랜덤"으로 처리해준다.
+		AdverDTO dto = dtoList.get(rnd.nextInt(dtoList.size()));
+		String picName = dto.getAdpPcUrl();
+		String url = dto.getAdUrl();
 		
-		//금액에 맞춰서 내보내야 하지만
+		HashMap<String,String> map = new HashMap<String, String>();
+		map.put("picName", picName);
+		map.put("url", url);
 		
+		if (errorcode == 0) {//맨처음경우 -> 아이디나 비밀번호 확인을 요구하지 않는경우
+			map.put("errorLogin", "none");
+		} else {//아이디나 비밀번호 입력이 틀려서 재확인을 요구하는 경우
+			map.put("errorLogin", "display");
+		}
 		
-		
-		return dtoList.get(rnd.nextInt(dtoList.size()));
+		return map;
 	}
 	
 	@Override

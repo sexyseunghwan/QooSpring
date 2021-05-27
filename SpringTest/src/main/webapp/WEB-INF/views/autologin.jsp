@@ -157,7 +157,7 @@
 					
 					//아래를 만족하면 넘어가준다.
 					if (sucessCount >= 3) {
-						location.href = "/JSPTest/qoo10/funny.do"
+						location.href = "login.action";
 					}
 				
 				},
