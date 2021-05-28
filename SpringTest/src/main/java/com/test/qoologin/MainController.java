@@ -34,7 +34,7 @@ public class MainController {
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		
 		
-		//광고관련 넘겨야 한다.
+		//광고관련 넘겨야 한다. & 아이디 비밀번호 오류관련
 		Map<String,String> adverMap = logService.adver(0);
 		request.setAttribute("adverMap", adverMap);
 
@@ -58,11 +58,12 @@ public class MainController {
 			
 			
 			if (loginResult == 0) {// 로그인 성공
-				System.out.println("로그인 성공");
+				//System.out.println("로그인 성공");
 				return "qoolog";
 			} else if (loginResult == 1 || loginResult == -1) {//로그인 실패 : 잘못된 로그인 정보 and 벤당한 아이피 들어오는경우
-				System.out.println("잘못된 로그인 정보");
+				//System.out.println("잘못된 로그인 정보");
 				
+				//아래에서 광고정보를 쇄신해준다. & 아이디 비밀번호 오류관련
 				Map<String,String> adverMap = logService.adver(-1);
 				request.setAttribute("adverMap", adverMap);
 				
