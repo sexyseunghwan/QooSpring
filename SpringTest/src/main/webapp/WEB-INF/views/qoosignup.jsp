@@ -10,7 +10,7 @@
     <title>Document</title>
 	<style>
 
-        /* 로그인 이미지 */
+                /* 로그인 이미지 */
         #qoo10login {
             /* border : 1px solid red; */
             margin: 0px auto;
@@ -58,6 +58,7 @@
             border: 1px solid #DADADA;
             background-color: #FFFFFF;
             height: 45px;
+            margin-bottom: 4px;
         }
 
         /* 진짜 정보를 입력하는 창 */
@@ -106,17 +107,20 @@
             padding-left: 7px;
             height: 45px;
             width: 350px;
+            margin-bottom:4px;
         }
 
         /* --생년월일 입력-- */
         .birth {
             border: 1px solid #DADADA;
+            /* border: 1px solid red; */
             background-color: #FFFFFF;
             float: left;
             margin: 3px 5px;
             width: 110px;
             height: 40px;
             outline: none;
+            margin-bottom: 4px;
         }
 
         .selected_info_birth {
@@ -143,6 +147,7 @@
             width: 114px;
             height: 40px;
             outline: none;
+            margin-bottom:4px;
         }
 
         #email_gol {
@@ -189,6 +194,16 @@
             outline: none;
         }
 
+        /* 유효성 검증 */
+        .error_next_box {
+            /* border:1px solid red; */
+            margin:0px auto;
+            width:400px;
+            font-size: 0.9em;
+            color : red;
+
+        }
+
 
 
     </style>
@@ -202,25 +217,31 @@
         <img src = "resources/images/Qoo10_Logo.png">    
     </div>
     
-    <form action="signUpGo.action" method="post">
+    <form action="" method="post">
         <div class="input_box">
             <div class = "info_name">아이디</div>
-            <div class = "info_write"><input id = "id_input" class = "inputs_info" type="text" name = "id_input"></div>
+            <div class = "info_write"><input id = "id_input" class = "inputs_info" type="text" name = "id_input" autocomplete="off"></div>
+            <div class = "error_next_box" id="iderrmsg" style="display:none;"></div>
         </div>
+
+        
 
         <div id="id_input" class="input_box">
             <div class = "info_name">비밀번호</div>
             <div class = "info_write"><input id = "pw_input" class = "inputs_info" type="password" name = "pw_input"></div>
+            <div class="error_next_box" id="pwerrmsg" style="display:none;">8~16 영문 대 소문자, 숫자, 특수문자를 사용하세요.</div>
         </div>
 
         <div id="pw_input" class="input_box">
             <div class = "info_name">비밀번호 재확인</div>
             <div class = "info_write"><input id = "pw_input_check" class = "inputs_info" type="password"></div>
+            <div class="error_next_box" id="pwerrmsg2" style="display:none;">비밀번호가 일치하지 않습니다.</div>
         </div>
 
         <div id="pw_input_check" class="input_box">
             <div class = "info_name">이름</div>
             <div class = "info_write"><input id = "name_input" class = "inputs_info" type="text" name = "name_input"></div>
+            <div class="error_next_box" id="nameerrmsg2" style="display:none;">정확한 이름을 적어주세요.</div>
         </div>
 
         <div id="gender_input" class="input_box">
@@ -230,6 +251,7 @@
                 <option value = "M">남자</option>
                 <option value = "F">여자</option>
             </select>
+            <div class="error_next_box" id="nameerrmsg2" style="display:none;">정확한 이름을 적어주세요.</div>
         </div>
 
         <div id="nation_input" class="input_box">
@@ -245,6 +267,7 @@
                 <option value = "UK">영국</option>
                 <option value = "US">미국</option>
             </select>
+            <div class="error_next_box" id="nameerrmsg2" style="display:none;">정확한 이름을 적어주세요.</div>
         </div>
 
         
@@ -252,28 +275,29 @@
         <div id="birth_input" class="input_box" style = "width : 360px;">
             <div class = "info_name">&nbsp;생년월일</div>
             <div class = "birth">
-                <input class = "inputs_info_small" type="text" id = "birth_yy" placeholder = "YYYY" name = "yy_input">
+                <input class = "inputs_info_small" type="text" id = "birth_yy" placeholder = "YYYY" name = "yy_input" maxlength="4">
             </div>
             <div class = "birth">
                     <select class="selected_info_birth" id = "birth_mm" name = "mm_input">
                         <option value seleted>선택</option>
-                        <option value = "01">1월</option>
-                        <option value = "02">2월</option>
-                        <option value = "03">3월</option>
-                        <option value = "04">4월</option>
-                        <option value = "05">5월</option>
-                        <option value = "06">6월</option>
-                        <option value = "07">7월</option>
-                        <option value = "08">8월</option>
-                        <option value = "09">9월</option>
+                        <option value = "1">1월</option>
+                        <option value = "2">2월</option>
+                        <option value = "3">3월</option>
+                        <option value = "4">4월</option>
+                        <option value = "5">5월</option>
+                        <option value = "6">6월</option>
+                        <option value = "7">7월</option>
+                        <option value = "8">8월</option>
+                        <option value = "9">9월</option>
                         <option value = "10">10월</option>
                         <option value = "11">11월</option>
                         <option value = "12">12월</option>
                     </select>
             </div>
             <div class = "birth">
-                <input class = "inputs_info_small" type="text" id = "birth_dd" placeholder = "dd" name = "dd_input">
+                <input class = "inputs_info_small" type="text" id = "birth_dd" placeholder = "dd" name = "dd_input" maxlength="2">
             </div>
+            <div class="error_next_box" id="nameerrmsg2" style="margin-left:5px; clear:both; display:none;">정확한 이름을 적어주세요.</div>
         </div>
 
         <div id="email_input" class="input_box" style = "width : 360px;">
@@ -296,6 +320,7 @@
                         <option value = "qoo10">qoo10</option>
                     </select>
             </div>
+            <div class="error_next_box" id="nameerrmsg2" style="margin-left:5px; clear:both; display:none;">필수입력 항목입니다.</div>
         </div>
 
         <div id="email_agree" class="input_box">
@@ -305,12 +330,14 @@
                     <option value = "Y">동의</option>
                     <option value = "N">비동의</option>
                 </select>
+                <div class="error_next_box" id="nameerrmsg2" style="display:none;">필수입력 항목입니다.</div>
         </div>
         
         
         <div id="phone_input" class="input_box">
             <div class = "info_name">휴대전화</div>
-            <div class = "info_write"><input id = "phone_number_input" class = "inputs_info" type="text" placeholder="01012345678" name = "phone_input"></div>
+            <div class = "info_write"><input id = "phone_number_input" class = "inputs_info" type="text" placeholder="01012345678" name = "phone_input" maxlength="11"></div>
+            <div class="error_next_box" id="nameerrmsg2" style="display:none;">필수입력 항목입니다.</div>
         </div>
 
         <div id="sms_agree" class="input_box">
@@ -320,6 +347,7 @@
                     <option value = "Y">동의</option>
                     <option value = "N">비동의</option>
                 </select>
+            <div class="error_next_box" id="nameerrmsg2" style="display:none;">필수입력 항목입니다.</div>
         </div>
 
         
@@ -338,6 +366,71 @@
 
     <script>
         
+
+        //----------------------------------------------------------------------------유효성 검증-----------------------------------------------------------------------------------
+
+        //1. 아이디
+        var idFlag = false;
+        
+        $("#id_input").blur(function(){
+
+            if(idFlag) return true;
+            var id = this.value;
+            
+            //iderrmsg
+            if (id == "") {
+                
+                $("#iderrmsg").text('필수입력 항목입니다.');
+                $("#iderrmsg").css('display','block');
+                return false;
+            } 
+
+            var isID = /^[a-z0-9][a-z0-9_\-]{4,19}$/;
+            if (!isID.test(id)) {
+                
+                $("#iderrmsg").text('5~12자의 영문 소문자, 숫자와 특수기호(_)만 사용 가능합니다.');
+                $("#iderrmsg").css('display','block');
+                return false;
+            }
+            
+            $.ajax({
+                type:"GET",
+                url: "/spring/signUpId.action" ,
+                data : "checkid=" + id,
+                datattype : "json",
+                success : function(result) {
+                    //var result = data.substr(4);
+                    console.log(result);
+                    
+                    if (result == 1) {
+                    	console.log(result);
+                        $("#iderrmsg").text('멋진 아이디네요!');
+                        $("#iderrmsg").css('display','block');
+                        /* if (event == "first") {
+                            showSuccessMsg(oMsg, "멋진 아이디네요!");
+                        } else {
+                            hideMsg(oMsg);
+                        } */
+                        idFlag = true;
+                    } else {
+                    	console.log(result);
+                    	$("#iderrmsg").text('이미 사용중이거나 탈퇴한 아이디입니다.');
+                        $("#iderrmsg").css('display','block');
+                        /* showErrorMsg(oMsg, "이미 사용중이거나 탈퇴한 아이디입니다.");
+                        setFocusToInputObject(oInput); */
+                    }
+                },
+                error: function(a,b,c) {
+                	console.log("error");
+					console.log(a,b,c);
+				}
+            });
+            
+            return true;
+
+        });
+
+
         //select 박스 클릭해줄때 빨간테두리 생기게 해주는 기능
         $(".selected_info").focus(function(){
             redClickSelectedOff(2,this);
@@ -441,7 +534,6 @@
         }
 
     
-
     </script>
 
 </body>

@@ -8,7 +8,18 @@
 <meta name="viewport" content="width=380, height=740, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0"/>
 <title>Insert title here</title>
 <style>
-
+		/* 로그인 이미지 */
+        #qoo10login {
+            /* border : 1px solid red; */
+            margin: 0px auto;
+            margin-top: 40px;
+            height: 100px;
+            width: 200px;
+        }
+        #qoo10login img {
+            width:100%;
+            height : 100%;
+        }
         /* 전체적인 바디 */
         body {
             /* border : 1px solid red; */
@@ -83,7 +94,9 @@
 </head>
 <body>
 
-    
+    <div id = "qoo10login">
+        <img src = "resources/images/Qoo10_Logo.png">    
+    </div>
     
     <form action="loginVerification.action" method = "POST" id = "inputform"><!-- 여기도 변화를 줘야하는데 어떤식으로 주면 될까 -->
         <!-- 아이디 -->

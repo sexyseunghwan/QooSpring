@@ -48,6 +48,12 @@ public class LoginDAO {
 		
 		return template.selectOne("tuning.qooSignUpsp",dto);
 	}
+	
+	//회원가입 - 아이디 검증
+	public int signUpIdVerifyCheck(String inputId) {
+		
+		return template.selectOne("tuning.qooSignUpspIdCheck",inputId);
+	}
 
 	
 	

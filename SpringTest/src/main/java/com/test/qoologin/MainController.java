@@ -1,5 +1,6 @@
 package com.test.qoologin;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class MainController {
 		
 
 		
-		return "tilestest.page";
+		return "tilestest";
 	}
 	
 	
@@ -50,8 +51,9 @@ public class MainController {
 		request.setAttribute("adverMap", adverMap);
 
 		
-		return "qoolog.text";
+		return "qoolog";
 	}
+	
 	
 	//처음에 로그인 페이지로 보내주는 곳
 	@RequestMapping(value = "/loginVerification.action", method = { RequestMethod.POST })
@@ -123,6 +125,16 @@ public class MainController {
 		System.out.println(result);
 						
 		return "result";
+	}
+	
+	//회원가입 - 아이디 검증
+	@RequestMapping(value = "/signUpId.action", method = { RequestMethod.GET })
+	public void idVerify(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		PrintWriter out = response.getWriter();
+		int result = logService.signUpIdVerify(request);
+		
+		out.print(result);
 	}
 	
 	
@@ -246,7 +258,6 @@ public class MainController {
 			
 			
 			iservice.k1(dto);
-			
 		}
 		
 		

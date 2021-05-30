@@ -27,5 +27,8 @@ public interface ILoginServiceReal {
 	//회원가입 다시 해주는곳
 	int signUp(HttpServletRequest request);
 	
+	//회원가입 - 아이디 검증
+	int signUpIdVerify(HttpServletRequest request);
+	
 	
 }

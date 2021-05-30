@@ -137,12 +137,6 @@ public class LoginServiceReal implements ILoginServiceReal{
 		map.put("picName", picName);
 		map.put("url", url);
 		
-//		if (errorcode == 0) {//맨처음경우 -> 아이디나 비밀번호 확인을 요구하지 않는경우
-//			map.put("errorLogin", "none");
-//		} else {//아이디나 비밀번호 입력이 틀려서 재확인을 요구하는 경우
-//			map.put("errorLogin", "display");
-//		}
-//		
 		return map;
 	}
 	
@@ -206,6 +200,20 @@ public class LoginServiceReal implements ILoginServiceReal{
 		
 		int result = dao.signUp(dto);
 
+		
+		return result;
+	}
+
+	@Override
+	public int signUpIdVerify(HttpServletRequest request) { //회원가입 - 아이디 검증
+		
+		String inputId = request.getParameter("checkid");
+		System.out.println(inputId);
+		
+		int result = dao.signUpIdVerifyCheck(inputId);
+		System.out.println("============");
+		System.out.println(result);
+		System.out.println("============");
 		
 		return result;
 	}
