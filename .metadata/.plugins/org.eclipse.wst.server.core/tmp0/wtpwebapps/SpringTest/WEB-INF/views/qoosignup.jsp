@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/views/inc/qooasset.jsp" %>
 
 <!DOCTYPE html>
@@ -9,19 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=380, height=740, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0"/>
     <title>Document</title>
-    <link rel="stylesheet" href="./css/jquery-ui.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <script src="./js/jquery-1.12.4.js"></script>
-    <script src="./js/jquery-ui.js"></script>
-    <script src="./js/bootstrap.js"></script>
 	<style>
-         /* 넥슨 글씨체 */
-        @font-face {
-            font-family: 'NEXON Lv1 Gothic OTF';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+
         /* 로그인 이미지 */
         #qoo10login {
             /* border : 1px solid red; */

@@ -19,7 +19,7 @@ public interface ILoginServiceReal {
 
 	JSONObject picCheck(HttpServletRequest request);//자동로그인 --> 그림을 계속 변경해주는것
 
-	HashMap<String,String> adver(int errorcode);//광고보내주는곳
+	HashMap<String,String> adver();//광고보내주는곳
 	
 	//날짜형식을 바꿔주는곳
 	String dateTypeConvert(String input);

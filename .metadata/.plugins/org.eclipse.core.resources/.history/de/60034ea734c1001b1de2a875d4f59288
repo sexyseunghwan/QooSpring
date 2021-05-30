@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ 
+<tiles-definitions>
+	<!-- main layout -->
+	
+	<!-- 1. 기본적인 템플릿을 생성한다. header, body, footer를 가진 teamplate.jsp라는 기본 레이아웃을 정의한다. 이 정의된 레이아웃의 name속성인 base를 상속하여 추가적으로 여러 tiles들을 만들수 있다. -->
+	<definition name="layout-tiles" template="/WEB-INF/views/tiles/tiles-layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/headerTemplate.jsp" />
+		<put-attribute name="left" value="/WEB-INF/views/tiles/sidebarTemplate.jsp" />
+		<put-attribute name="body" value="" /> <!-- 실제로 들어갈 jsp 이름을 입력해야 하므로 일단 보류해준다.-->
+		<put-attribute name="foot" value="/WEB-INF/views/tiles/footerTemplate.jsp" />
+	</definition>
+	
+	<!-- 아래에서 적용해주는거 같은데.. 위에 타일즈 자체를  상속받은것이라고 생각하면 편하다.-->
+	<definition name="*.page" extends="layout-tiles">
+		<put-attribute name="body" value="/WEB-INF/views/tilestest.jsp" />
+		<put-attribute name="title" value="게시판" />
+	</definition>
+	
+	<!-- 로그인에 적용 -->
+	<definition name="layout-qoologin" template="/WEB-INF/views/qoologintiles/qoolog-tiles-layout.jsp">
+		<put-attribute name="qooheader" value="/WEB-INF/views/tiles/qoologintiles/qoohead.jsp" />
+		<put-attribute name="body" value="" /> <!-- 실제로 들어갈 jsp 이름을 입력해야 하므로 일단 보류해준다.-->
+	</definition>
+	
+	
+	<definition name="*.text" extends="layout-qoologin">
+		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" /><!-- {1} 이 뜻하는게 뭐지?-->
+		<put-attribute name="qoologheader" value="로그인창" />
+	</definition>
+	
+	
+</tiles-definitions>

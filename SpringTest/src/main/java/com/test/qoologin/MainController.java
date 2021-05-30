@@ -29,17 +29,28 @@ public class MainController {
 	@Autowired
 	private ILoginServiceReal logService;
 	
+	//타일즈 테스트
+	@RequestMapping(value = "/tiles.action", method = { RequestMethod.GET })
+	public String tiles(HttpServletRequest request, HttpServletResponse response) {
+		
+
+		
+		return "tilestest.page";
+	}
+	
+	
+	
 	//처음에 로그인 페이지로 보내주는 곳
 	@RequestMapping(value = "/login.action", method = { RequestMethod.GET })
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		
 		
 		//광고관련 넘겨야 한다. & 아이디 비밀번호 오류관련
-		Map<String,String> adverMap = logService.adver(0);
+		Map<String,String> adverMap = logService.adver();
 		request.setAttribute("adverMap", adverMap);
 
 		
-		return "qoolog";
+		return "qoolog.text";
 	}
 	
 	//처음에 로그인 페이지로 보내주는 곳
@@ -64,8 +75,11 @@ public class MainController {
 				//System.out.println("잘못된 로그인 정보");
 				
 				//아래에서 광고정보를 쇄신해준다. & 아이디 비밀번호 오류관련
-				Map<String,String> adverMap = logService.adver(-1);
+				Map<String,String> adverMap = logService.adver();
 				request.setAttribute("adverMap", adverMap);
+				request.setAttribute("loginError", 404);
+				
+				System.out.println("여기왔다는건데 쉬벌");
 				
 				return "qoolog";
 			} else {//보안정책을 따라야하는 경우

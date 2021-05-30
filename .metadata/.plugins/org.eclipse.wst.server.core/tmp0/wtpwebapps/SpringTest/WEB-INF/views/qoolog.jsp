@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/views/inc/qooasset.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -9,25 +8,7 @@
 <meta name="viewport" content="width=380, height=740, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0"/>
 <title>Insert title here</title>
 <style>
-		/* 넥슨 글씨체 */
-        @font-face {
-            font-family: 'NEXON Lv1 Gothic OTF';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        /* 로그인 이미지 */
-        #qoo10login {
-            /* border : 1px solid red; */
-            margin: 0px auto;
-            margin-top: 40px;
-            height: 100px;
-            width: 200px;
-        }
-        #qoo10login img {
-            width:100%;
-            height : 100%;
-        }
+
         /* 전체적인 바디 */
         body {
             /* border : 1px solid red; */
@@ -88,6 +69,7 @@
              cursor : pointer;
          }
          
+         <c:if test="${not empty loginError}">
          /* 로그인 실패했을때 띄워줄것 */
          #errorLogin {
              width : 340px;
@@ -95,15 +77,13 @@
              color : red;
              text-align: center;
          }
+         </c:if>
 		
     </style>
 </head>
 <body>
 
     
-    <div id = "qoo10login">
-        <img src = "resources/images/Qoo10_Logo.png">    
-    </div>
     
     <form action="loginVerification.action" method = "POST" id = "inputform"><!-- 여기도 변화를 줘야하는데 어떤식으로 주면 될까 -->
         <!-- 아이디 -->
@@ -114,10 +94,11 @@
         <div class = "inputform">
             <input type="password" name = "pw" autocomplete="off" id = "inputpw" placeholder = "비밀번호">
         </div>
+        <c:if test="${not empty loginError}">
         <div id = "errorLogin" style = "display: <c:out value="${adverMap['errorLogin']}"/>;">
             &nbsp;가입되지 않은 아이디이거나, 잘못된 비밀번호 입니다.
        	</div>       
-        
+        </c:if>
         <!-- 로그인 버튼 -->
         <div class = "inputform">
             <input id = "go" type="submit" value = "SIGN IN" style = "font-weight: bold; font-size: 1.3em; background-color: #EC2E3C; color:white;">
