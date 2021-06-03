@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="&lt;org.apache.tiles-version"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="local"/>
 			<item value="&lt;org.apache.tiles-version"/>
 			<item value="sucessCount"/>
 		</list>

@@ -1,5 +1,7 @@
+M2_REPO=C\:/Users/\uC2E0\uC2B9\uD658/Desktop/mavenTest
 eclipse.preferences.version=1
 org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/Window/Desktop/goodtest
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

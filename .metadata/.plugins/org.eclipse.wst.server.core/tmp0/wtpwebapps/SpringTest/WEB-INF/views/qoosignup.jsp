@@ -374,14 +374,16 @@
         
         $("#id_input").blur(function(){
 
-            if(idFlag) return true;
+            //if(idFlag) return true;
             var id = this.value;
             
             //iderrmsg
             if (id == "") {
                 
                 $("#iderrmsg").text('필수입력 항목입니다.');
-                $("#iderrmsg").css('display','block');
+                $("#iderrmsg")
+                .css('color','red')
+                .css('display','block');
                 return false;
             } 
 
@@ -389,7 +391,9 @@
             if (!isID.test(id)) {
                 
                 $("#iderrmsg").text('5~12자의 영문 소문자, 숫자와 특수기호(_)만 사용 가능합니다.');
-                $("#iderrmsg").css('display','block');
+                $("#iderrmsg")
+                .css('color','red')
+                .css('display','block');
                 return false;
             }
             
@@ -400,28 +404,26 @@
                 datattype : "json",
                 success : function(result) {
                     //var result = data.substr(4);
-                    console.log(result);
+                    //console.log(result);
                     
-                    if (result == 1) {
-                    	console.log(result);
+                    if (result == 1) {// 아이디가 중복되지 않는경우
+                    	//console.log(result);
                         $("#iderrmsg").text('멋진 아이디네요!');
-                        $("#iderrmsg").css('display','block');
-                        /* if (event == "first") {
-                            showSuccessMsg(oMsg, "멋진 아이디네요!");
-                        } else {
-                            hideMsg(oMsg);
-                        } */
+                        $("#iderrmsg")
+                        .css('color','#08A600')
+                        .css('display','block');
+                       
                         idFlag = true;
-                    } else {
-                    	console.log(result);
+                    } else {//아이디가 중복되는 경우
+                    	//console.log(result);
                     	$("#iderrmsg").text('이미 사용중이거나 탈퇴한 아이디입니다.');
-                        $("#iderrmsg").css('display','block');
-                        /* showErrorMsg(oMsg, "이미 사용중이거나 탈퇴한 아이디입니다.");
-                        setFocusToInputObject(oInput); */
+                        $("#iderrmsg")
+                        .css('color','red')
+                        .css('display','block');
                     }
                 },
                 error: function(a,b,c) {
-                	console.log("error");
+                	//console.log("error");
 					console.log(a,b,c);
 				}
             });
