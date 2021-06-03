@@ -22,3 +22,10 @@
 0:0:0:0:0:0:0:1 - - [03/Jun/2021:21:45:00 +0900] "GET /spring/resources/images/adver/gucci_01.jpg HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [03/Jun/2021:21:45:01 +0900] "GET /spring/signUp.action HTTP/1.1" 200 20263
 0:0:0:0:0:0:0:1 - - [03/Jun/2021:21:45:01 +0900] "GET /spring/%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B2%BD%EB%A1%9C HTTP/1.1" 404 863
+127.0.0.1 - - [03/Jun/2021:23:03:56 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:03:56 +0900] "GET /spring/ HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:04:03 +0900] "GET /spring/login.action HTTP/1.1" 200 4898
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:04:05 +0900] "GET /spring/resources/images/adver/burgerking_01.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:04:06 +0900] "GET /spring/signUp.action HTTP/1.1" 200 20263
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:04:06 +0900] "GET /spring/%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B2%BD%EB%A1%9C HTTP/1.1" 404 863
+0:0:0:0:0:0:0:1 - - [03/Jun/2021:23:04:09 +0900] "POST /spring/signUp.action HTTP/1.1" 405 802
